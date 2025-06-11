@@ -14,7 +14,7 @@ See a summary of completed tasks
 Responsive, accessible UI with icons
 
 ## Demo
-![Todo]()
+![Todo](Todo image)
 
 ## Getting Started
 
