@@ -1,7 +1,7 @@
-React Todo List
+# React Todo List
 A simple, modern Todo List application built with React. This app lets you add, complete, and delete tasks with an intuitive interface and responsive design.
 
-Features
+## Features
 
 Add new tasks quickly
 
@@ -26,7 +26,7 @@ text
 |                                           |
 | 1 of 2 tasks completed                    |
 +-------------------------------------------+
-Getting Started
+## Getting Started
 
 Clone the repository
 
@@ -43,7 +43,7 @@ bash
 npm start
 The app will be available at http://localhost:3000.
 
-Usage
+## Usage
 
 Add a task: Type in the input and click the plus icon or press Enter.
 
@@ -53,7 +53,7 @@ Delete a task: Click the trash can icon.
 
 Track progress: See the count of completed tasks at the bottom.
 
-Tech Stack
+## Tech Stack
 
 React
 
@@ -61,22 +61,10 @@ react-icons (Feather icons)
 
 Tailwind CSS (for styling)
 
-File Structure
-
-text
-react-todo-list/
-├── src/
-│   ├── TodoList.jsx
-│   ├── App.js
-│   └── index.js
-├── package.json
-└── README.md
-Accessibility & Best Practices
+## Accessibility & Best Practices
 
 All interactive elements have accessible labels.
 
 Keyboard and screen reader friendly.
 
 Modern, mobile-friendly design.
-
-Contributing
