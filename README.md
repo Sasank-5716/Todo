@@ -17,18 +17,20 @@ Responsive, accessible UI with icons
 
 Clone the repository
 
-bash
-git clone https://github.com/yourusername/react-todo-list.git
-cd react-todo-list
+```bash
+git clone https://github.com/Sasank-5716/Todo
+```
 Install dependencies
 
-bash
+```bash
 npm install
+```
 Start the development server
 
-bash
-npm start
-The app will be available at http://localhost:3000.
+```bash
+npm run dev
+```
+
 
 ## Usage
 
