@@ -13,19 +13,6 @@ See a summary of completed tasks
 
 Responsive, accessible UI with icons
 
-Preview
-
-text
-+-------------------------------------------+
-|         My Todo List                      |
-| What's on your mind today?                |
-| [ Add a new task...   ( + ) ]             |
-|                                           |
-| - [ ] Task 1         (🗑️)                 |
-| - [✔] Completed Task (🗑️)                 |
-|                                           |
-| 1 of 2 tasks completed                    |
-+-------------------------------------------+
 ## Getting Started
 
 Clone the repository
