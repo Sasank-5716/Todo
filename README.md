@@ -1,12 +1,82 @@
-# React + Vite
+React Todo List
+A simple, modern Todo List application built with React. This app lets you add, complete, and delete tasks with an intuitive interface and responsive design.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features
 
-Currently, two official plugins are available:
+Add new tasks quickly
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Mark tasks as complete or incomplete
 
-## Expanding the ESLint configuration
+Delete tasks
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+See a summary of completed tasks
+
+Responsive, accessible UI with icons
+
+Preview
+
+text
++-------------------------------------------+
+|         My Todo List                      |
+| What's on your mind today?                |
+| [ Add a new task...   ( + ) ]             |
+|                                           |
+| - [ ] Task 1         (🗑️)                 |
+| - [✔] Completed Task (🗑️)                 |
+|                                           |
+| 1 of 2 tasks completed                    |
++-------------------------------------------+
+Getting Started
+
+Clone the repository
+
+bash
+git clone https://github.com/yourusername/react-todo-list.git
+cd react-todo-list
+Install dependencies
+
+bash
+npm install
+Start the development server
+
+bash
+npm start
+The app will be available at http://localhost:3000.
+
+Usage
+
+Add a task: Type in the input and click the plus icon or press Enter.
+
+Mark as complete: Click the circle next to a task.
+
+Delete a task: Click the trash can icon.
+
+Track progress: See the count of completed tasks at the bottom.
+
+Tech Stack
+
+React
+
+react-icons (Feather icons)
+
+Tailwind CSS (for styling)
+
+File Structure
+
+text
+react-todo-list/
+├── src/
+│   ├── TodoList.jsx
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
+Accessibility & Best Practices
+
+All interactive elements have accessible labels.
+
+Keyboard and screen reader friendly.
+
+Modern, mobile-friendly design.
+
+Contributing

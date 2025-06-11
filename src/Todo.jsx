@@ -1,10 +1,12 @@
 import { useState } from 'react';
+import { FiPlus, FiTrash2, FiCheck } from 'react-icons/fi';
 
 function TodoList() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
-  const addTodo = () => {
+  const addTodo = (e) => {
+    e.preventDefault();
     if (input.trim()) {
       setTodos([...todos, { text: input, completed: false }]);
       setInput('');
@@ -23,47 +25,72 @@ function TodoList() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
-        <h1 className="text-2xl font-bold mb-4">Todo List</h1>
-        <div className="flex mb-4">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            className="flex-1 p-2 border rounded-l focus:outline-none focus:ring-2 focus:ring-blue-500"
-            placeholder="Add a new task"
-          />
-          <button
-            onClick={addTodo}
-            className="bg-blue-500 text-white px-4 py-2 rounded-r hover:bg-blue-600"
-          >
-            Add
-          </button>
+    <div className="fixed inset-0 flex items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="bg-indigo-500 p-6 text-center">
+          <h1 className="text-2xl font-bold text-white">My Todo List</h1>
+          <p className="text-indigo-100">What's on your mind today?</p>
         </div>
-        <ul>
-          {todos.map((todo, index) => (
-            <li key={index} className="flex items-center justify-between mb-2 p-2 bg-gray-50 rounded">
-              <div className="flex items-center">
-                <input
-                  type="checkbox"
-                  checked={todo.completed}
-                  onChange={() => toggleTodo(index)}
-                  className="mr-2 h-5 w-5"
-                />
-                <span className={todo.completed ? 'line-through text-gray-500' : ''}>
-                  {todo.text}
-                </span>
-              </div>
-              <button
-                onClick={() => deleteTodo(index)}
-                className="text-red-500 hover:text-red-700"
-              >
-                Delete
-              </button>
+        
+        <form onSubmit={addTodo} className="p-6">
+          <div className="flex items-center rounded-lg overflow-hidden shadow-sm">
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              className="flex-1 p-3 border-0 focus:ring-2 focus:ring-indigo-500"
+              placeholder="Add a new task..."
+              aria-label="Add a new todo item"
+            />
+            <button
+              type="submit"
+              className="bg-indigo-500 text-white p-3 hover:bg-indigo-600 transition-colors"
+              aria-label="Add todo"
+            >
+              <FiPlus className="h-5 w-5" />
+            </button>
+          </div>
+        </form>
+
+        <ul className="divide-y divide-gray-200">
+          {todos.length === 0 ? (
+            <li className="p-6 text-center text-gray-500">
+              No tasks yet. Add one above!
             </li>
-          ))}
+          ) : (
+            todos.map((todo, index) => (
+              <li key={index} className="p-4 hover:bg-gray-50 transition-colors">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-3">
+                    <button
+                      onClick={() => toggleTodo(index)}
+                      className={`h-6 w-6 rounded-full flex items-center justify-center ${todo.completed ? 'bg-green-500 text-white' : 'border-2 border-gray-300'}`}
+                      aria-label={todo.completed ? 'Mark as incomplete' : 'Mark as complete'}
+                    >
+                      {todo.completed && <FiCheck className="h-4 w-4" />}
+                    </button>
+                    <span className={`${todo.completed ? 'line-through text-gray-400' : 'text-gray-700'}`}>
+                      {todo.text}
+                    </span>
+                  </div>
+                  <button
+                    onClick={() => deleteTodo(index)}
+                    className="text-gray-400 hover:text-red-500 transition-colors p-1"
+                    aria-label="Delete todo"
+                  >
+                    <FiTrash2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </li>
+            ))
+          )}
         </ul>
+
+        {todos.length > 0 && (
+          <div className="px-6 py-3 bg-gray-50 text-sm text-gray-500 text-center">
+            {todos.filter(t => t.completed).length} of {todos.length} tasks completed
+          </div>
+        )}
       </div>
     </div>
   );
