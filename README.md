@@ -14,7 +14,7 @@ See a summary of completed tasks
 Responsive, accessible UI with icons
 
 ## Demo
-![Todo](Todo image)
+![Todo](/src/assets/todo.png.png)
 
 ## Getting Started
 
